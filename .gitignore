@@ -1,3 +1,4 @@
+<<<<<<< 9509124494debc5bfe5d9d14f47a865d1a5d142d
 
 # Created by https://www.gitignore.io/api/linux,git,jekyll
 
@@ -24,4 +25,8 @@
 ### Jekyll ###
 _site/
 .sass-cache/
+=======
+_site
+.sass-cache
+>>>>>>> Update
 .jekyll-metadata
