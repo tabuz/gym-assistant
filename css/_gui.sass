@@ -26,7 +26,7 @@ body
     color: $accent-light
     width: 27%
     height: 50%
-    +flex-basis(27%)
+
     +order(1)
     background: rgba(0, 0 ,0, .4)
 
@@ -59,7 +59,7 @@ body
   .gym-chart
     width: 73%
     height: 50%
-    +flex-basis(73%)
+
     +order(2)
     background: rgba(0, 0 ,0, .3)
 
@@ -67,8 +67,11 @@ body
       width: 100%
       height: 100%
 
-      .jqx-chart-legend-text
-        
+      .tooltip-value
+        font-size: 42px
+        color: $accent
+        font-style: italic
+
 
   .gym-stats
     width: 50%

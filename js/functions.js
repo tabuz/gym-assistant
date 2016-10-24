@@ -1,57 +1,65 @@
-$(document).ready(function () {
+$( document ).ready(function() {
 
-            // prepare chart data
-            var  sampleData = [
-                    { Day:'Monday', KM:310, KCAL:340, Hearbeat: 120},
-                    { Day:'Tuesday', KM:420, KCAL:450, Hearbeat: 112},
-                    { Day:'Wednesday', KM:260, KCAL:250, Hearbeat: 118},
-                    { Day:'Thursday', KM:350, KCAL:300, Hearbeat: 117},
-                    { Day:'Friday', KM:400, KCAL:560, Hearbeat: 120},
-                    { Day:'Saturday', KM:300, KCAL:300, Hearbeat: 110},
-                    { Day:'Sunday', KM:450, KCAL:700, Hearbeat: 120}
-                ];
+      var myChart = Highcharts.chart('chart', {
 
-            // prepare jqxChart settings
-var settings = {
-source: sampleData,
-categoryAxis:
-  {
-    visible: false,
-  },
-title:
-  {
-    visible: false,
-  },
-description:
-  {
-    visible: false,
-  },
-padding: { left: 0, top: 0, right: 0, bottom: 0 },
-colorScheme: 'scheme11',
-seriesGroups:
-    [{
-      type: 'splinearea',
-      useGradient: false,
-      valueAxis:
-      {
-        visible: false,
-        baselineValue: 0,
-        showGridLines: false,
-        minValue: 0,
-        maxValue: 900,
-        unitInterval: 450,
-      },
-      series:
-      [
-        {dataField: 'KCAL', dataText: 'KCAL'},
-        {dataField: 'KM', dataText: 'KM'},
-      ]
-    }]
+          chart: {type: 'areaspline',
+                  spacing: [0 ,0 ,0 ,0],
+                  margin: [100, -50, 0, -50]},
+          legend: {enabled: false},
+          title: {text: null},
 
-};
+          xAxis: {categories: [0, 1, 2, 3, 4, 5, 6, 7],
+                  offset: 0},
 
-            // select the chartContainer DIV element and render the chart.
-            $('#chart').jqxChart(settings);
-            $('#chart').jqxChart({backgroundColor:'transparent', borderLineColor: 'transparent'});
-            $('#chart').jqxChart('refresh');
-        });
+          yAxis: {endOnTick: false,
+                  tickAmount: 3,
+                  max: 900,
+                  title: {text: null},
+                  offset: -150,
+                  zIndex: -100},
+          tooltip: {
+            useHTML: true,
+            borderColor: 'transparent',
+            formatter: function() {
+                if (this.x > 0) {
+                    var s = '<span class="tooltip-value">'+this.y+'</span>';
+                    return s;
+                }
+                else return false;
+                }
+              },
+          plotOptions: {
+              series: {
+                marker: {enabled: false,
+                        fillColor: '#FFFFFF',
+                        lineWidth: 2,
+                        lineColor: null,
+                        states: {
+                        hover: {
+                            fillColor: '#e9ac8f',
+                            lineColor: 'rgba(0,0,0, .6)',
+                            radius: 4,
+                            lineWidth: 4
+                        }
+                    }
+                        },
+                lineColor: '#e9ac8f'}
+                       },
+          series: [{
+            data: [{y: 200,
+                      marker: {enabled: false,
+                      states:{
+                        hover:{enabled: false},
+                        select:{enabled: false}
+                      }}},
+                   {y: 220},
+                   {y: 300},
+                   {y: 350},
+                   {y: 452},
+                   {y: 350},
+                   {y: 300},
+                   {y: 220}
+                  ]
+        }]
+      });
+});
