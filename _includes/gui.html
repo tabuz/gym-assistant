@@ -13,8 +13,47 @@
     </div>
   </div>
   <div class="gym-chart">
-    <div id='chart'></div>
+    <select class="chart-toggle" id="option-toggle">
+      <option value="cardio">Cardio</option>
+      <option value="heartrate">Heartrate</option>
+      <option value="distance">Distance</option>
+    </select>
+    <select class="week-toggle">
+      <option value="0">Week</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <div class="chart-active" id='chart-cardio'></div>
+    <div id='chart-heartrate'></div>
+    <div id='chart-distance'></div>
   </div>
-  <div class="gym-stats">D</div>
+  <div class="gym-stats">
+    <div class="stat-kcal">
+      <div>
+        <span></span>
+        Kcal
+      </div>
+    </div>
+    <div class="stat-heartrate">
+      <div>
+        <span></span>
+        Heartrate
+      </div>
+    </div>
+    <div class="stat-distance">
+      <div>
+        <span></span>
+        Km
+      </div>
+    </div>
+    <div class="stat-day">
+      <div>
+        <span></span>
+        Workout
+      </div>
+    </div>
+  </div>
   <div class="gym-bars">E</div>
 </div>

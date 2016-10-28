@@ -1,5 +1,5 @@
 body
-  background: url('img/bg.png') no-repeat center center
+  background: url('../img/bg.png') no-repeat center center
   background-color: $bgcolor
   background-size: cover
   font-family: 'Open Sans'
@@ -59,26 +59,94 @@ body
   .gym-chart
     width: 73%
     height: 50%
-
     +order(2)
     background: rgba(0, 0 ,0, .3)
+    position: relative
 
-    #chart
+    select
+      font-family: "Open Sans"
+      background: transparent
+      font-size: 14px
+      text-transform: uppercase
+      border: 1px solid transparent
+      color: white
+
+      &:focus
+        border: 1px solid transparent
+
+      option
+        background-color: rgba(0,0,0, .8)
+        border: none
+
+
+    .chart-toggle
+      +position(absolute, 20px 120px null null)
+      z-index: 999
+
+    .week-toggle
+      +position(absolute, 20px 40px null null)
+      z-index: 999
+
+    [id^="chart-"]
+      position: absolute
       width: 100%
       height: 100%
+      opacity: 0.1
+      +transition(all 500ms)
 
-      .tooltip-value
-        font-size: 42px
-        color: $accent
-        font-style: italic
+    .chart-active
+      display: block
+      opacity: 1
+      z-index: 5
 
+    .tooltip-value
+      margin: 0 20px 0 0
+      display: inline-block
+      font-size: 42px
+      font-style: italic
+      color: $accent
+      font-style: italic
+
+    .tooltip-desc
+      color: $accent
+      font-size: 12px
+      line-height: 14px
+      display: inline-block
+
+      span
+        color: red
+        padding-top: 5px
 
   .gym-stats
     width: 50%
     height: 50%
+    color: $accent
+    font-size: 12px
+    font-weight: 700
     +flex-basis(50%)
     +order(3)
     background: rgba(0, 0 ,0, .3)
+    text-transform: uppercase
+    text-align: center
+
+
+  [class^="stat-"]
+    +display(flex)
+    +align-items(center)
+    +justify-content(center)
+    width: 50%
+    height: 50%
+    float: left
+
+    div
+      display: block
+
+    span
+      display: block
+      font-weight: 300
+      font-size: 32px
+      color: white
+
   .gym-bars
     width: 40%
     height: 50%

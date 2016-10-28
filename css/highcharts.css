@@ -58,7 +58,7 @@ with neutral, with a weight corresponding to the number in the name. */
   stroke: #ccd6eb; }
 
 .highcharts-yaxis .highcharts-axis-line {
-  stroke-width: 0; }
+  stroke-width: 0px; }
 
 .highcharts-axis-title {
   fill: #666666; }
@@ -136,7 +136,7 @@ with neutral, with a weight corresponding to the number in the name. */
   stroke-width: 0; }
 
 .highcharts-state-hover path {
-  transition: stroke-width 50;
+  transition: stroke-width 250ms;
   /* quick in */ }
 
 .highcharts-state-normal path {
@@ -195,15 +195,15 @@ g.highcharts-series, .highcharts-point {
 
 .highcharts-area {
   fill: #e9ac8f;
-  fill-opacity: 0.75;
+  fill-opacity: 1;
   stroke-width: 0; }
 
 .highcharts-markers {
-  stroke-width: 1px;
+  stroke-width: 0px;
   stroke: #ffffff; }
 
 .highcharts-point {
-  stroke-width: 4px;
+  stroke-width: 0px;
   z-index: 999; }
 
 .highcharts-dense-data .highcharts-point {
