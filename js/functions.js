@@ -244,6 +244,75 @@ $( document ).ready(function() {
         $('.menu-items').toggleClass('menu-active');
         $('.gym-menu').toggleClass('menu-wide');
         $('.gym-main').toggleClass('active');
+      });
 
+      chartDistance = Highcharts.chart('chart-bars', {
+
+          chart: {type: 'column',
+                  spacing: [0 ,0 ,0 ,0],
+                  margin: [0, 0, 0, 0]},
+          legend: {enabled: false},
+          title: {text: null},
+
+          xAxis: {categories: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                  offset: 0},
+
+          yAxis: {endOnTick: false,
+                  tickAmount: 4,
+                  max: 25,
+                  title: {text: null},
+                  zIndex: -100},
+          tooltip: {
+            useHTML: true,
+            borderColor: 'transparent',
+            formatter: function() {
+                if (this.x) {
+                    var s = '';
+                    return s;
+                }
+                else return false;
+                }
+              },
+          plotOptions: {
+              series: {
+                marker: {enabled: false,
+                        fillColor: '#FFFFFF',
+                        lineWidth: 2,
+                        lineColor: null,
+                        states: {
+                        hover: {
+                            fillColor: '#e9ac8f',
+                            lineColor: 'rgba(0,0,0, .6)',
+                            radius: 5,
+                            lineWidth: 5
+                        }
+                        }
+                        },
+                states: {
+                      hover:{
+                          halo: false
+                      }
+                },
+                lineColor: '#e9ac8f'}
+                       },
+          series: [{
+            data: [{y: 25},
+                   {y: 20},
+                   {y: 15},
+                   {y: 20},
+                   {y: 10},
+                   {y: 10},
+                   {y: 5},
+                   {y: 15},
+                   {y: 10},
+                   {y: 5},
+                   {y: 5},
+                   {y: 10},
+                   {y: 15},
+                   {y: 20},
+                   {y: 25}
+
+                  ]
+        }]
       });
 });
