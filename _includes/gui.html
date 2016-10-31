@@ -1,59 +1,79 @@
-<div class="gym-menu">A</div>
 <div class="gym-wrapper">
-  <div class="gym-info">
-    <img src="img/face.png" alt="Avatar" />
-    <h3>Joan Harris</h3>
-    <p>
-      Joan is a big fan of cross-fit and cardio. Her goal is to gain stamina.
-    </p>
-    <div class="icons">
-      <span>{% include icon-clock.html %}</span>
-      <span>{% include icon-medal.html %}</span>
-      <span>{% include icon-crosshair.html %}</span>
+  <div class="gym-menu">
+    <div class="menu-control">
+      <div class="bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span>Menu</span>
+      </div>
+    </div>
+    <div class="menu-items">
+      <div><span class="flaticon-play-button"></span>Training</div>
+      <div><span class="flaticon-time"></span>History</div>
+      <div><span class="flaticon-time-1"></span>Training Plan</div>
+      <div><span class="flaticon-users"></span>Friends</div>
+      <div><span class="flaticon-signs"></span>Health</div>
+      <div><span class="flaticon-cogwheel"></span>Settings</div>
     </div>
   </div>
-  <div class="gym-chart">
-    <select class="chart-toggle" id="option-toggle">
-      <option value="cardio">Cardio</option>
-      <option value="heartrate">Heartrate</option>
-      <option value="distance">Distance</option>
-    </select>
-    <select class="week-toggle">
-      <option value="0">Week</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
-    <div class="chart-active" id='chart-cardio'></div>
-    <div id='chart-heartrate'></div>
-    <div id='chart-distance'></div>
+  <div class="gym-main">
+    <div class="gym-info">
+      <img src="img/face.png" alt="Avatar" />
+      <h3>Joan Harris</h3>
+      <p>
+        Joan is a big fan of cross-fit and cardio. Her goal is to gain stamina.
+      </p>
+      <div class="icons">
+        <span>{% include icon-clock.html %}</span>
+        <span>{% include icon-medal.html %}</span>
+        <span>{% include icon-crosshair.html %}</span>
+      </div>
+    </div>
+    <div class="gym-chart">
+      <select class="chart-toggle" id="option-toggle">
+        <option value="cardio">Cardio</option>
+        <option value="heartrate">Heartrate</option>
+        <option value="distance">Distance</option>
+      </select>
+      <select class="week-toggle">
+        <option value="0">Week</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <div class="chart-active" id='chart-cardio'></div>
+      <div id='chart-heartrate'></div>
+      <div id='chart-distance'></div>
+    </div>
+    <div class="gym-stats">
+      <div class="stat-kcal">
+        <div>
+          <span></span>
+          Kcal
+        </div>
+      </div>
+      <div class="stat-heartrate">
+        <div>
+          <span></span>
+          Heartrate
+        </div>
+      </div>
+      <div class="stat-distance">
+        <div>
+          <span></span>
+          Km
+        </div>
+      </div>
+      <div class="stat-day">
+        <div>
+          <span></span>
+          Workout
+        </div>
+      </div>
+    </div>
+    <div class="gym-bars">E</div>
   </div>
-  <div class="gym-stats">
-    <div class="stat-kcal">
-      <div>
-        <span></span>
-        Kcal
-      </div>
-    </div>
-    <div class="stat-heartrate">
-      <div>
-        <span></span>
-        Heartrate
-      </div>
-    </div>
-    <div class="stat-distance">
-      <div>
-        <span></span>
-        Km
-      </div>
-    </div>
-    <div class="stat-day">
-      <div>
-        <span></span>
-        Workout
-      </div>
-    </div>
-  </div>
-  <div class="gym-bars">E</div>
+
 </div>

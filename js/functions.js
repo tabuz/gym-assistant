@@ -27,6 +27,8 @@ $( document ).ready(function() {
                     var s = '<div class="tooltip-kcal"><span class="tooltip-value">'+this.y+'</span><span class="tooltip-desc">KCAL<br />OCT, '+this.x+'</span></div>';
                     $('.stat-kcal span').html(this.y);
                     $('.stat-day span').html(this.x);
+                    $('.stat-distance span').html(chartDistance.series[0].data[this.x].y);
+                    $('.stat-heartrate span').html(chartHeartrate.series[0].data[this.x].y);
                     return s;
                 }
                 else return false;
@@ -102,6 +104,8 @@ $( document ).ready(function() {
                     var s = '<div class="tooltip-kcal"><span class="tooltip-value">'+this.y+'</span><span class="tooltip-desc">/ MIN<br />OCT, '+this.x+'</span></div>';
                     $('.stat-heartrate span').html(this.y);
                     $('.stat-day span').html(this.x);
+                    $('.stat-distance span').html(chartDistance.series[0].data[this.x].y);
+                    $('.stat-kcal span').html(chartCardio.series[0].data[this.x].y);
                     return s;
                 }
                 else return false;
@@ -177,6 +181,8 @@ $( document ).ready(function() {
                     var s = '<div class="tooltip-kcal"><span class="tooltip-value">'+this.y+'</span><span class="tooltip-desc">KM<br />OCT, '+this.x+'</span></div>';
                     $('.stat-distance span').html(this.y);
                     $('.stat-day span').html(this.x);
+                    $('.stat-kcal span').html(chartCardio.series[0].data[this.x].y);
+                    $('.stat-heartrate span').html(chartHeartrate.series[0].data[this.x].y);
                     return s;
                 }
                 else return false;
@@ -232,6 +238,12 @@ $( document ).ready(function() {
         var value = $(this).val();
         $('[id^="chart-"]').removeClass('chart-active');
         $('#chart-'+value).addClass('chart-active');
+      });
+
+      $('.menu-control').on('click', function(){
+        $('.menu-items').toggleClass('menu-active');
+        $('.gym-menu').toggleClass('menu-wide');
+        $('.gym-main').toggleClass('active');
 
       });
 });
